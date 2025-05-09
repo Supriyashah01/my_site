@@ -21,10 +21,14 @@ const Index = () => {
       document.documentElement.classList.remove('dark');
     }
     
+    // Load critical images first
+    const preloadProfileImage = new Image();
+    preloadProfileImage.src = "/lovable-uploads/bb473bd6-4682-42ba-9280-3bcb577e52ad.png";
+    
     // Prefetch project images for better performance
     const prefetchImages = () => {
       const images = [
-        "https://images.unsplash.com/photo-1673188848458-e3a9b7d8dc2e?w=800&auto=format&fit=crop&q=80",
+        "/lovable-uploads/766159e6-0445-452e-b9f7-029a1d6a0388.png",
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80",
         "https://images.unsplash.com/photo-1576153192396-180ecef2a715?w=800&auto=format&fit=crop&q=80",
         "https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?w=800&auto=format&fit=crop&q=80",
@@ -39,7 +43,7 @@ const Index = () => {
     };
     
     // Execute after initial render
-    prefetchImages();
+    setTimeout(prefetchImages, 2000); // Delay prefetching to prioritize critical content
   }, []);
 
   return (

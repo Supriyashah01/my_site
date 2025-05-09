@@ -23,7 +23,7 @@ const projectsData: Project[] = [
     title: "AI-Powered Design Assistant",
     description: "An intelligent assistant that helps designers create user interfaces based on natural language prompts and sketches.",
     category: "AI",
-    image: "https://images.unsplash.com/photo-1673188848458-e3a9b7d8dc2e?w=800&auto=format&fit=crop&q=80",
+    image: "/lovable-uploads/766159e6-0445-452e-b9f7-029a1d6a0388.png",
     tags: ["React", "TypeScript", "TensorFlow.js", "Figma API"],
     github: "https://github.com/supriyashah/ai-design-assistant",
     demo: "https://ai-design.demo.com"
@@ -150,6 +150,7 @@ const Projects = () => {
 
 const ProjectCard = ({ project }: { project: Project }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   return (
     <motion.div
@@ -168,6 +169,13 @@ const ProjectCard = ({ project }: { project: Project }) => {
             src={project.image} 
             alt={project.title} 
             className="w-full h-full object-cover transition-transform hover:scale-105"
+            onError={(e) => {
+              if (!imageError) {
+                setImageError(true);
+                e.currentTarget.src = "https://via.placeholder.com/800x400?text=Project+Image";
+              }
+            }}
+            loading="lazy"
           />
           <AnimatePresence>
             {isHovered && (
@@ -190,14 +198,16 @@ const ProjectCard = ({ project }: { project: Project }) => {
             )}
           </AnimatePresence>
         </div>
+        
         <CardHeader>
-          <CardTitle className="text-xl flex items-center">
+          <CardTitle className="text-xl flex items-center flex-wrap gap-2">
             {project.title}
-            <Badge variant="outline" className="ml-2 bg-portfolio-purple/10 text-portfolio-purple text-xs">
+            <Badge variant="outline" className="ml-auto bg-portfolio-purple/10 text-portfolio-purple text-xs">
               {project.category}
             </Badge>
           </CardTitle>
         </CardHeader>
+        
         <CardContent className="flex-grow">
           <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
           <div className="flex flex-wrap gap-2 mt-4">
@@ -208,6 +218,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             ))}
           </div>
         </CardContent>
+        
         <CardFooter className="flex gap-2 pt-2 border-t border-gray-100 dark:border-gray-800">
           {project.github && (
             <Button variant="outline" size="sm" className="flex-1" onClick={() => window.open(project.github, '_blank')}>
