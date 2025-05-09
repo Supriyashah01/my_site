@@ -24,7 +24,7 @@ const About = () => {
             viewport={{ once: true }}
             className="relative flex justify-center items-center"
           >
-            <div className="w-64 h-64 md:w-80 md:h-80 relative bg-transparent">
+            <div className="w-60 h-60 md:w-72 md:h-72 relative bg-transparent">
               <img 
                 src="/lovable-uploads/bb473bd6-4682-42ba-9280-3bcb577e52ad.png" 
                 alt="Supriya Shah"
