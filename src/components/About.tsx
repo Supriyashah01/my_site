@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
+import { Eye, CircleUser } from 'lucide-react';
 
 const About = () => {
   return (
@@ -25,7 +26,7 @@ const About = () => {
             viewport={{ once: true }}
             className="relative flex justify-center items-center"
           >
-            <div className="w-52 h-52 md:w-64 md:h-64 relative rounded-full overflow-hidden bg-gradient-to-br from-portfolio-blue/10 to-portfolio-purple/10 backdrop-blur-sm p-1">
+            <div className="w-40 h-40 md:w-48 md:h-48 relative rounded-full overflow-hidden bg-gradient-to-br from-portfolio-blue/10 to-portfolio-purple/10 backdrop-blur-sm p-1">
               <Avatar className="w-full h-full border-2 border-portfolio-purple/20">
                 <AvatarImage 
                   src="/lovable-uploads/bb473bd6-4682-42ba-9280-3bcb577e52ad.png" 
@@ -34,6 +35,12 @@ const About = () => {
                 />
                 <AvatarFallback className="bg-gradient-to-br from-portfolio-blue/30 to-portfolio-purple/30 text-xl font-medium text-white">SS</AvatarFallback>
               </Avatar>
+              <div className="absolute bottom-2 right-2 bg-white dark:bg-gray-800 rounded-full p-1 shadow-md">
+                <Eye size={18} className="text-portfolio-blue" />
+              </div>
+              <div className="absolute top-2 left-2 bg-white dark:bg-gray-800 rounded-full p-1 shadow-md">
+                <CircleUser size={18} className="text-portfolio-purple" />
+              </div>
             </div>
           </motion.div>
           
