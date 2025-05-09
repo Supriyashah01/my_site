@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -36,6 +37,16 @@ const projectsData: Project[] = [
     tags: ["D3.js", "React", "CSS Grid", "REST API"],
     github: "https://github.com/supriyashah/data-viz-dashboard",
     demo: "https://data-viz.demo.com"
+  },
+  {
+    id: 3,
+    title: "ICT Awareness Program in Sindhupalchowk",
+    description: "A community initiative to promote digital literacy and ICT skills among rural communities in Sindhupalchowk district of Nepal.",
+    category: "Community",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop&q=80",
+    tags: ["Digital Literacy", "Community Outreach", "Training", "Rural Development"],
+    github: "https://github.com/supriyashah/ict-sindhupalchowk",
+    demo: "https://ict-awareness.demo.com"
   },
   {
     id: 4,
