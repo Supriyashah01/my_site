@@ -7,11 +7,10 @@ import {
   HoverCardContent, 
   HoverCardTrigger 
 } from '@/components/ui/hover-card';
-import { ChevronRight, Calendar, Clock } from 'lucide-react';
+import { ChevronRight, Info } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 interface TimelineItemProps {
-  year: string;
   title: string;
   description: string;
   delay: number;
@@ -40,7 +39,6 @@ const Experience = () => {
           {/* Timeline items */}
           <div className="space-y-12">
             <TimelineItem 
-              year="2022-Present" 
               title="Advanced UI/UX & AI Integration"
               description="Exploring advanced design patterns and the intersection of AI with human-centered interfaces. Working on projects that combine aesthetic design with intelligent functionality."
               delay={0.1}
@@ -53,7 +51,6 @@ const Experience = () => {
             />
             
             <TimelineItem 
-              year="2021-2022" 
               title="Expanding Design & Development Skills"
               description="Deepened knowledge of JavaScript frameworks and design systems. Started working with Python for backend logic and integrating with frontend interfaces."
               delay={0.2}
@@ -66,7 +63,6 @@ const Experience = () => {
             />
             
             <TimelineItem 
-              year="2020-2021" 
               title="UI/UX Design Exploration"
               description="Discovered user experience design principles and started applying them to web projects. Learned Figma for wireframing and prototyping."
               delay={0.3}
@@ -79,7 +75,6 @@ const Experience = () => {
             />
             
             <TimelineItem 
-              year="2019-2020" 
               title="Web Development Foundations"
               description="Started learning HTML, CSS, and JavaScript. Built first static websites and began understanding responsive design principles."
               delay={0.4}
@@ -97,7 +92,7 @@ const Experience = () => {
   );
 };
 
-const TimelineItem = ({ year, title, description, delay, skills, achievements }: TimelineItemProps) => {
+const TimelineItem = ({ title, description, delay, skills, achievements }: TimelineItemProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -115,8 +110,7 @@ const TimelineItem = ({ year, title, description, delay, skills, achievements }:
         </HoverCardTrigger>
         <HoverCardContent className="w-64">
           <div className="flex justify-between items-center">
-            <span className="text-sm font-medium"><Calendar className="h-3.5 w-3.5 inline mr-1" /> Timeline</span>
-            <span className="text-sm text-portfolio-purple font-semibold">{year}</span>
+            <span className="text-sm font-medium"><Info className="h-3.5 w-3.5 inline mr-1" /> Timeline</span>
           </div>
           <p className="text-xs text-gray-500 mt-1">Click the card to see more details</p>
         </HoverCardContent>
@@ -134,9 +128,6 @@ const TimelineItem = ({ year, title, description, delay, skills, achievements }:
                 className={`ml-2 h-5 w-5 text-portfolio-purple transition-transform duration-300 ${isExpanded ? 'rotate-90' : ''}`} 
               />
             </CardTitle>
-            <span className="text-sm px-3 py-1 bg-portfolio-blue/10 text-portfolio-blue rounded-full flex items-center">
-              <Clock className="mr-1 h-3.5 w-3.5" /> {year}
-            </span>
           </CardHeader>
           <CardContent>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
