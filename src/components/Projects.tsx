@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -59,6 +58,16 @@ const projectsData: Project[] = [
     demo: "https://finance.demo.com"
   },
   {
+    id: 5,
+    title: "E-commerce User Interface Design",
+    description: "A modern interface design for e-commerce platforms focusing on user experience and conversion optimization.",
+    category: "UI/UX",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
+    tags: ["UI Design", "Wireframing", "Prototype", "User Testing"],
+    github: "https://github.com/supriyashah/ecommerce-ui-design",
+    demo: "https://ecommerce-ui.demo.com"
+  },
+  {
     id: 6,
     title: "User Research Platform",
     description: "A platform for conducting user research, collecting feedback, and analyzing user behavior patterns.",
@@ -73,7 +82,7 @@ const projectsData: Project[] = [
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(projectsData);
-  const categories = ["All", "AI", "Frontend", "UI/UX"];
+  const categories = ["All", "Frontend", "UI/UX", "Community"];
   
   useEffect(() => {
     if (selectedCategory === "All") {
@@ -103,7 +112,7 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center max-w-2xl mx-auto mb-12 text-gray-600 dark:text-gray-300"
         >
-          A collection of projects that showcase my skills in UI/UX design, web development, and AI integration.
+          A collection of projects that showcase my skills in UI/UX design, web development, and community outreach.
         </motion.p>
         
         <div className="flex justify-center mb-12">
