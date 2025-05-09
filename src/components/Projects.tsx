@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -39,15 +38,6 @@ const projectsData: Project[] = [
     demo: "https://data-viz.demo.com"
   },
   {
-    id: 3,
-    title: "Human-Centered Design System",
-    description: "A comprehensive design system focused on accessibility and usability, built with component-driven development.",
-    category: "UI/UX",
-    image: "https://images.unsplash.com/photo-1576153192396-180ecef2a715?w=800&auto=format&fit=crop&q=80",
-    tags: ["Storybook", "React", "Accessibility", "Design Tokens"],
-    github: "https://github.com/supriyashah/hcd-system",
-  },
-  {
     id: 4,
     title: "Personal Finance Tracker",
     description: "A web application for tracking personal expenses and incomes with visualization features.",
@@ -56,15 +46,6 @@ const projectsData: Project[] = [
     tags: ["React", "Chart.js", "Local Storage", "PWA"],
     github: "https://github.com/supriyashah/finance-tracker",
     demo: "https://finance.demo.com"
-  },
-  {
-    id: 5,
-    title: "Sentiment Analysis Tool",
-    description: "An AI-powered tool that analyzes text and determines the emotional sentiment behind it.",
-    category: "AI",
-    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&auto=format&fit=crop&q=80",
-    tags: ["Python", "NLP", "React", "Flask API"],
-    github: "https://github.com/supriyashah/sentiment-analyzer",
   },
   {
     id: 6,
