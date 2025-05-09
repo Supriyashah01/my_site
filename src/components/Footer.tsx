@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="mb-6 md:mb-0">
             <h3 className="text-xl font-semibold gradient-text">Supriya Shah</h3>
             <p className="text-gray-600 dark:text-gray-400 mt-2">
-              UI/UX Design Aspirant & HCI driven Web Developer
+              UI/UX Design Aspirant & HCI driven
             </p>
           </div>
           
