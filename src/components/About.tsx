@@ -22,13 +22,13 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="relative flex justify-center"
+            className="relative flex justify-center items-center"
           >
-            <div className="w-full max-w-sm relative bg-transparent shadow-md">
+            <div className="w-64 h-64 md:w-80 md:h-80 relative bg-transparent">
               <img 
                 src="/lovable-uploads/bb473bd6-4682-42ba-9280-3bcb577e52ad.png" 
                 alt="Supriya Shah"
-                className="object-contain w-full h-auto mix-blend-multiply"
+                className="object-contain w-full h-full mix-blend-multiply"
                 loading="eager"
                 onError={(e) => {
                   console.error("Image failed to load");
