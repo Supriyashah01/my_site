@@ -39,12 +39,12 @@ const Experience = () => {
           {/* Timeline items */}
           <div className="space-y-12">
             <TimelineItem 
-              title="Advanced UI/UX & AI Integration"
-              description="Exploring advanced design patterns and the intersection of AI with human-centered interfaces. Working on projects that combine aesthetic design with intelligent functionality."
+              title="Advanced UI/UX Design"
+              description="Exploring advanced design patterns and human-centered interfaces. Working on projects that combine aesthetic design with intelligent functionality."
               delay={0.1}
-              skills={["React", "Next.js", "Figma", "AI Integration"]}
+              skills={["React", "Next.js", "Figma", "Design Systems"]}
               achievements={[
-                "Designed and implemented an AI-powered UI component library",
+                "Designed and implemented a component library",
                 "Contributed to open source HCI research projects",
                 "Completed advanced coursework in generative design"
               ]}
