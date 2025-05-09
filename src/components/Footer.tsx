@@ -2,8 +2,6 @@
 import React from 'react';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  
   return (
     <footer className="py-12 px-8 md:px-16 bg-gray-100 dark:bg-gray-800">
       <div className="max-w-5xl mx-auto">
@@ -38,7 +36,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center text-sm text-gray-500 dark:text-gray-400">
-          <p>© {currentYear} Supriya Shah. All rights reserved.</p>
+          <p>© 2024 Supriya Shah. All rights reserved.</p>
         </div>
       </div>
     </footer>
