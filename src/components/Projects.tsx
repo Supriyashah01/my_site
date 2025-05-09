@@ -20,13 +20,13 @@ interface Project {
 const projectsData: Project[] = [
   {
     id: 1,
-    title: "AI-Powered Design Assistant",
-    description: "An intelligent assistant that helps designers create user interfaces based on natural language prompts and sketches.",
-    category: "AI",
+    title: "Simple School Website Layout",
+    description: "A clean, user-friendly website layout for educational institutions with responsive design and intuitive navigation.",
+    category: "Frontend",
     image: "/lovable-uploads/766159e6-0445-452e-b9f7-029a1d6a0388.png",
-    tags: ["React", "TypeScript", "TensorFlow.js", "Figma API"],
-    github: "https://github.com/supriyashah/ai-design-assistant",
-    demo: "https://ai-design.demo.com"
+    tags: ["React", "TypeScript", "Tailwind CSS", "Responsive Design"],
+    github: "https://github.com/supriyashah/school-website-layout",
+    demo: "https://school-website.demo.com"
   },
   {
     id: 2,
