@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
 
 const About = () => {
   return (
@@ -24,17 +25,15 @@ const About = () => {
             viewport={{ once: true }}
             className="relative flex justify-center items-center"
           >
-            <div className="w-60 h-60 md:w-72 md:h-72 relative bg-transparent">
-              <img 
-                src="/lovable-uploads/bb473bd6-4682-42ba-9280-3bcb577e52ad.png" 
-                alt="Supriya Shah"
-                className="object-contain w-full h-full mix-blend-multiply"
-                loading="eager"
-                onError={(e) => {
-                  console.error("Image failed to load");
-                  e.currentTarget.src = "https://via.placeholder.com/300";
-                }}
-              />
+            <div className="w-52 h-52 md:w-64 md:h-64 relative rounded-full overflow-hidden bg-gradient-to-br from-portfolio-blue/10 to-portfolio-purple/10 backdrop-blur-sm p-1">
+              <Avatar className="w-full h-full border-2 border-portfolio-purple/20">
+                <AvatarImage 
+                  src="/lovable-uploads/bb473bd6-4682-42ba-9280-3bcb577e52ad.png" 
+                  alt="Supriya Shah"
+                  className="object-cover mix-blend-multiply opacity-90"
+                />
+                <AvatarFallback className="bg-gradient-to-br from-portfolio-blue/30 to-portfolio-purple/30 text-xl font-medium text-white">SS</AvatarFallback>
+              </Avatar>
             </div>
           </motion.div>
           
