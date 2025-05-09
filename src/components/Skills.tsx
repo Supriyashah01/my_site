@@ -6,7 +6,7 @@ const Skills = () => {
   const skills = {
     languages: ["HTML", "CSS", "JavaScript", "Python"],
     designTools: ["Figma", "DaVinci Resolve"],
-    specialties: ["UI/UX Design", "Human-Centered Design", "AI Integration", "Web Development"],
+    specialties: ["UI/UX Design", "AI Integration", "Web Development"],
     softSkills: ["Empathy", "Problem Solving", "Creativity", "Collaboration"]
   };
 
