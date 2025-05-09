@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -19,13 +20,13 @@ interface Project {
 const projectsData: Project[] = [
   {
     id: 1,
-    title: "Simple School Website Layout",
-    description: "A clean, user-friendly website layout for educational institutions with responsive design and intuitive navigation.",
+    title: "Portfolio Website Template",
+    description: "A modern, responsive portfolio website template designed for developers and creatives to showcase their work effectively.",
     category: "Frontend",
     image: "/lovable-uploads/766159e6-0445-452e-b9f7-029a1d6a0388.png",
     tags: ["React", "TypeScript", "Tailwind CSS", "Responsive Design"],
-    github: "https://github.com/supriyashah/school-website-layout",
-    demo: "https://school-website.demo.com"
+    github: "https://github.com/supriyashah/portfolio-template",
+    demo: "https://portfolio-template.demo.com"
   },
   {
     id: 2,
