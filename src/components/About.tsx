@@ -24,18 +24,18 @@ const About = () => {
             viewport={{ once: true }}
             className="relative flex justify-center"
           >
-            <div className="w-64 h-64 md:w-72 md:h-72 relative bg-portfolio-purple/5 rounded-full overflow-hidden border-4 border-portfolio-purple shadow-lg">
+            <div className="w-full max-w-md relative bg-portfolio-purple/5 overflow-hidden border-4 border-portfolio-purple shadow-lg">
               <img 
                 src="/lovable-uploads/bb473bd6-4682-42ba-9280-3bcb577e52ad.png" 
                 alt="Supriya Shah"
-                className="object-cover w-full h-full"
+                className="object-contain w-full h-auto"
                 loading="eager"
                 onError={(e) => {
                   console.error("Image failed to load");
                   e.currentTarget.src = "https://via.placeholder.com/300";
                 }}
               />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-portfolio-blue/10 to-transparent mix-blend-overlay"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-portfolio-blue/10 to-transparent mix-blend-overlay"></div>
             </div>
           </motion.div>
           
