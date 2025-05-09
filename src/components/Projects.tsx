@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Image } from 'lucide-react';
+import { ExternalLink, Github, Eye } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -23,57 +23,58 @@ const projectsData: Project[] = [
     title: "AI-Powered Design Assistant",
     description: "An intelligent assistant that helps designers create user interfaces based on natural language prompts and sketches.",
     category: "AI",
-    image: "https://via.placeholder.com/600x400/4361EE/FFFFFF?text=AI+Design+Assistant",
+    image: "https://images.unsplash.com/photo-1673188848458-e3a9b7d8dc2e?w=800&auto=format&fit=crop&q=80",
     tags: ["React", "TypeScript", "TensorFlow.js", "Figma API"],
-    github: "https://github.com",
-    demo: "https://demo.com"
+    github: "https://github.com/supriyashah/ai-design-assistant",
+    demo: "https://ai-design.demo.com"
   },
   {
     id: 2,
     title: "Interactive Data Visualization Dashboard",
     description: "A responsive dashboard showcasing complex data sets through intuitive and interactive visualizations.",
     category: "Frontend",
-    image: "https://via.placeholder.com/600x400/7209B7/FFFFFF?text=Data+Dashboard",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80",
     tags: ["D3.js", "React", "CSS Grid", "REST API"],
-    github: "https://github.com",
-    demo: "https://demo.com"
+    github: "https://github.com/supriyashah/data-viz-dashboard",
+    demo: "https://data-viz.demo.com"
   },
   {
     id: 3,
     title: "Human-Centered Design System",
     description: "A comprehensive design system focused on accessibility and usability, built with component-driven development.",
     category: "UI/UX",
-    image: "https://via.placeholder.com/600x400/B5A9FC/000000?text=Design+System",
+    image: "https://images.unsplash.com/photo-1576153192396-180ecef2a715?w=800&auto=format&fit=crop&q=80",
     tags: ["Storybook", "React", "Accessibility", "Design Tokens"],
-    github: "https://github.com",
+    github: "https://github.com/supriyashah/hcd-system",
   },
   {
     id: 4,
     title: "Personal Finance Tracker",
     description: "A web application for tracking personal expenses and incomes with visualization features.",
     category: "Frontend",
-    image: "https://via.placeholder.com/600x400/4CC9F0/000000?text=Finance+Tracker",
+    image: "https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?w=800&auto=format&fit=crop&q=80",
     tags: ["React", "Chart.js", "Local Storage", "PWA"],
-    github: "https://github.com",
-    demo: "https://demo.com"
+    github: "https://github.com/supriyashah/finance-tracker",
+    demo: "https://finance.demo.com"
   },
   {
     id: 5,
     title: "Sentiment Analysis Tool",
     description: "An AI-powered tool that analyzes text and determines the emotional sentiment behind it.",
     category: "AI",
-    image: "https://via.placeholder.com/600x400/3A0CA3/FFFFFF?text=Sentiment+Analysis",
+    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&auto=format&fit=crop&q=80",
     tags: ["Python", "NLP", "React", "Flask API"],
-    github: "https://github.com",
+    github: "https://github.com/supriyashah/sentiment-analyzer",
   },
   {
     id: 6,
     title: "User Research Platform",
     description: "A platform for conducting user research, collecting feedback, and analyzing user behavior patterns.",
     category: "UI/UX",
-    image: "https://via.placeholder.com/600x400/4361EE/FFFFFF?text=Research+Platform",
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&auto=format&fit=crop&q=80",
     tags: ["React", "Firebase", "Analytics", "Survey Design"],
-    demo: "https://demo.com"
+    github: "https://github.com/supriyashah/user-research-platform",
+    demo: "https://ux-research.demo.com"
   }
 ];
 
@@ -148,6 +149,8 @@ const Projects = () => {
 };
 
 const ProjectCard = ({ project }: { project: Project }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -155,20 +158,45 @@ const ProjectCard = ({ project }: { project: Project }) => {
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
       whileHover={{ y: -5 }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="h-full"
     >
-      <Card className="overflow-hidden h-full flex flex-col border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+      <Card className="overflow-hidden h-full flex flex-col border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
         <div className="h-48 overflow-hidden bg-gray-100 dark:bg-gray-800 relative">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Image className="w-10 h-10 text-gray-400" />
-          </div>
           <img 
             src={project.image} 
             alt={project.title} 
             className="w-full h-full object-cover transition-transform hover:scale-105"
           />
+          <AnimatePresence>
+            {isHovered && (
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="absolute inset-0 bg-gray-900/70 flex items-center justify-center"
+              >
+                <Button 
+                  size="sm"
+                  variant="secondary"
+                  className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white"
+                  onClick={() => window.open(project.demo || project.github, '_blank')}
+                >
+                  <Eye className="mr-2 h-4 w-4" />
+                  View Project
+                </Button>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
         <CardHeader>
-          <CardTitle className="text-xl">{project.title}</CardTitle>
+          <CardTitle className="text-xl flex items-center">
+            {project.title}
+            <Badge variant="outline" className="ml-2 bg-portfolio-purple/10 text-portfolio-purple text-xs">
+              {project.category}
+            </Badge>
+          </CardTitle>
         </CardHeader>
         <CardContent className="flex-grow">
           <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>

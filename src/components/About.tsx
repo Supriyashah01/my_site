@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const About = () => {
   return (
@@ -22,11 +23,15 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative flex justify-center"
           >
-            <div className="w-full h-80 md:h-96 bg-gradient-to-br from-portfolio-blue to-portfolio-purple rounded-2xl opacity-80"></div>
-            <div className="absolute inset-0 flex items-center justify-center text-white text-2xl font-semibold">
-              [Your Photo Here]
+            <div className="w-64 h-64 md:w-72 md:h-72 relative rounded-full overflow-hidden border-4 border-portfolio-purple shadow-lg">
+              <img 
+                src="/lovable-uploads/bb473bd6-4682-42ba-9280-3bcb577e52ad.png" 
+                alt="Supriya Shah"
+                className="object-cover w-full h-full"
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-portfolio-blue/30 to-transparent mix-blend-overlay"></div>
             </div>
           </motion.div>
           

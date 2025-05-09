@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 
 const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const toggleVisibility = () => {
     if (window.scrollY > 300) {
@@ -16,10 +17,16 @@ const BackToTop = () => {
   };
 
   const scrollToTop = () => {
+    setIsAnimating(true);
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
+    
+    // Reset animation state after scrolling completes
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 1000);
   };
 
   useEffect(() => {
@@ -43,8 +50,14 @@ const BackToTop = () => {
             onClick={scrollToTop}
             aria-label="Back to top"
             className="w-12 h-12 rounded-full bg-portfolio-purple hover:bg-portfolio-purple/90 shadow-lg flex items-center justify-center"
+            disabled={isAnimating}
           >
-            <ChevronUp className="h-6 w-6" />
+            <motion.div
+              animate={isAnimating ? { y: [-5, 0, -5] } : { y: 0 }}
+              transition={isAnimating ? { repeat: Infinity, duration: 1 } : {}}
+            >
+              <ChevronUp className="h-6 w-6" />
+            </motion.div>
           </Button>
         </motion.div>
       )}
