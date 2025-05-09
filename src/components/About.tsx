@@ -31,7 +31,7 @@ const About = () => {
                 <AvatarImage 
                   src="/lovable-uploads/bb473bd6-4682-42ba-9280-3bcb577e52ad.png" 
                   alt="Supriya Shah"
-                  className="object-cover mix-blend-multiply opacity-95 object-[center_top]"
+                  className="object-cover mix-blend-multiply opacity-95 object-center"
                 />
                 <AvatarFallback className="bg-gradient-to-br from-portfolio-blue/30 to-portfolio-purple/30 text-xl font-medium text-white">SS</AvatarFallback>
               </Avatar>
